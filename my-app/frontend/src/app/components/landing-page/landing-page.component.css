@@ -1,201 +1,132 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Exo", Arial, sans-serif;
+  background-color: #557;
+  color: #fff;
+  display: grid;
+  place-content: center;
 }
 
-.main {
-	width: 100vww;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+.device-iphone-x {
+  height: min(85vh - 2rem, 100%);
+  position: fixed;
+  top: 10vh;
+  bottom: 10vh;
+  right: 40px;
+  z-index: 99;
+  min-height: 420px;
 }
 
-/* HEADER */
-
-.header {
-	background-color: #111a28;
-	margin: 0;
-	padding: 15px 0;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+.device-iphone-x .device-frame,
+.device-iphone-x .device-content {
+  height: 100%;
 }
 
-.logo {
-	font-size: 24px;
-	color: #f9faf8;
+.device-iphone-x .device-frame {
+  background: transparent;
+  border: 28px solid #000;
+  padding: 0;
+}
+.device-iphone-x .device-content {
+  overflow: hidden auto;
+  background: rgb(255 255 255 / 0.5);
+  backdrop-filter: blur(10px) hue-rotate(180deg);
 }
 
-.nav a {
-	text-decoration: none;
-	color: #e5e7eb;
-	font-size: 18px;
-	font-weight: 300;
-	margin: 10px;
-	padding: 5px;
+.device-iphone-x .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* HERO SECTION */
-
-.hero {
-	background-color: #1f2937;
-	padding: 90px 70px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.device-iphone-x .content {
+  width: 100%;
 }
-.right {
-	width: 500px;
-}
-
-.title {
-	font-size: 48px;
-	font-weight: 700;
-	line-height: 1em;
-	color: #f9faf8;
+.fixed-background {
+  padding-right: 500px;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem 500px 1rem 1rem;
+  display: flex;
+  align-items: center;
+  scroll-snap-stop: always;
+  scroll-snap-align: center;
 }
 
-.subtitle {
-	color: #e5e7eb;
-	font-size: 18px;
-	font-weight: 300;
-	margin: 15px 0;
+.fixed-background .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.7;
+  padding: 2vw 3vw 2vw 5vw;
+  background: rgb(0 0 0 / 0.6);
+  border-radius: 8px;
+  backdrop-filter: blur(5px) sepia(0.9) hue-rotate(145deg)
+    drop-shadow(5px 9px 24px lime);
+  filter: drop-shadow(12px 12px 2px rgb(100 134 45 /0.3));
 }
 
-.signup {
-	color: #f9faf8;
-	background-color: #3882f6;
-	font-size: 18px;
-	padding: 8px 25px;
-	border: none;
-	border-radius: 8px;
-	flex-shrink: 0;
+.fixed-background h2 {
+  font-size: clamp(2rem, 1vw + 2.5rem, 3rem);
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 50%);
+  margin-bottom: 2rem;
 }
 
-.left img {
-	width: 400px;
-	height: auto;
-	border-radius: 15px;
+.fixed-background {
+  --bg-image: url("https://picsum.photos/2016/1642?image=10");
+  --start-color: #09f;
+  --stop-color: #90f;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(
+      to bottom,
+      var(--start-color),
+      var(--stop-color)
+    ),
+    var(--bg-image);
+  background-attachment: fixed;
+  background-blend-mode: overlay, exclusion;
 }
 
-/* INFORMATION */
-
-.info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 50px 70px;
+.img-1 {
+  --start-color: #00deff;
+  --stop-color: #ff8c00;
+  --bg-image: url("https://picsum.photos/2016/1642?image=10");
 }
 
-.infotitle {
-	font-size: 36px;
-	font-weight: 700;
-	margin-bottom: 20px;
+.img-2 {
+  --start-color: #111340;
+  --stop-color: #4800ff;
+  --bg-image: url("https://picsum.photos/2016/1642?image=20");
 }
 
-.infocards {
-	display: flex;
-	justify-content: center;
-	gap: 40px;
-	margin-bottom: 30px;
+.img-3 {
+  --start-color: #7c87a8;
+  --stop-color: #ff0028;
+  --bg-image: url("https://picsum.photos/2016/1642?image=30");
 }
-
-.card {
-	max-width: 150px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	font-size: 13px;
-	color: #515b67;
+.img-4 {
+  --start-color: #84a87c;
+  --stop-color: #1b6571;
+  --bg-image: url("https://picsum.photos/2016/1642?image=40");
 }
-
-.info img {
-	width: 150px;
-	margin: 20px 0 10px 0;
-	padding: 2px;
-	border-radius: 25px;
-	outline: 3px solid #3882f6;
-}
-
-/* QUOTE */
-
-.quotecont {
-	background-color: #e5e7eb;
-	padding: 100px 300px;
-	display: block;
-}
-
-.quote {
-	font-size: 36px;
-	font-style: italic;
-	font-weight: lighter;
-	color: #1f2937;
-	max-width: 900px;
-	margin: auto;
-}
-
-.author {
-	text-align: end;
-	font-weight: 700;
-	font-size: 20px;
-	color: #1f2937;
-	max-width: 900px;
-	margin: auto;
-}
-
-/* CALL TO ACTION */
-
-.call {
-	padding: 70px 140px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-.callbox {
-	max-width: 900px;
-	background-color: #3882f6;
-	border-radius: 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 30px;
-	padding: 40px 100px;
-}
-
-.callhead {
-	color: #f9faf8;
-	font-size: 20px;
-	font-weight: 700;
-}
-
-.calldesc {
-	color: #e5e7eb;
-	font-size: 15px;
-}
-
-.callbox .signup {
-	border: 2px solid #f9faf8;
-}
-
-/* FOOTER */
-
-.footer {
-	text-align: center;
-	background-color: #111a28;
-	padding: 20px;
-	color: #e5e7eb;
-}
-
-.footer a {
-	text-decoration: none;
-	color: #e5e7eb;
+.img-5 {
+  --start-color: #5d4012;
+  --stop-color: #5d912a;
+  --bg-image: url("https://picsum.photos/2016/1642?image=50");
 }
