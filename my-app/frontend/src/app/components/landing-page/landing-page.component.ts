@@ -4,10 +4,11 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { HomeComponent } from '../home/home.component';
 import { DisplayComponent } from '../display/display.component';
 
+
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [HomeComponent, NavBarComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
