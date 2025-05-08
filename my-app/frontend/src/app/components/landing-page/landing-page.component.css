@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -66,20 +68,37 @@ body {
   align-items: center;
   scroll-snap-stop: always;
   scroll-snap-align: center;
+  
 }
 
 .fixed-background .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   line-height: 1.7;
   padding: 2vw 3vw 2vw 5vw;
-  background: rgb(0 0 0 / 0.6);
+  background: rgba(254, 182, 182, 0.6);
   border-radius: 8px;
   backdrop-filter: blur(5px) sepia(0.9) hue-rotate(145deg)
     drop-shadow(5px 9px 24px lime);
   filter: drop-shadow(12px 12px 2px rgb(100 134 45 /0.3));
+  
+
 }
+
+.image-text-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.img {
+  height: 500px;
+  width: 500px;
+  flex-shrink: 0;
+}
+
+.image-text-wrapper p {
+  max-width: 500px;
+}
+
 
 .fixed-background h2 {
   font-size: clamp(2rem, 1vw + 2.5rem, 3rem);
@@ -88,9 +107,9 @@ body {
 }
 
 .fixed-background {
-  --bg-image: url("https://picsum.photos/2016/1642?image=10");
-  --start-color: #09f;
-  --stop-color: #90f;
+  /* --bg-image: url("https://i.pinimg.com/736x/0d/40/98/0d4098da9e99ffe1018c99013effd23a.jpg"); */
+  --start-color: rgba(252, 83, 198, 0);
+  --stop-color: rgba(224, 105, 242, 0);
   background-position: center;
   background-size: cover;
   background-image: linear-gradient(
@@ -104,29 +123,30 @@ body {
 }
 
 .img-1 {
-  --start-color: #00deff;
+  --start-color: #fdf0ab;
   --stop-color: #ff8c00;
-  --bg-image: url("https://picsum.photos/2016/1642?image=10");
+  --bg-image: url("https://images.unsplash.com/photo-1658492055212-e1acbccfca5a?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
 
 .img-2 {
+  width: 100%;
   --start-color: #111340;
   --stop-color: #4800ff;
-  --bg-image: url("https://picsum.photos/2016/1642?image=20");
+  /* --bg-image: url("https://picsum.photos/2016/1642?image=20"); */
 }
 
 .img-3 {
   --start-color: #7c87a8;
   --stop-color: #ff0028;
-  --bg-image: url("https://picsum.photos/2016/1642?image=30");
+  /* --bg-image: url("https://picsum.photos/2016/1642?image=30"); */
 }
 .img-4 {
   --start-color: #84a87c;
   --stop-color: #1b6571;
-  --bg-image: url("https://picsum.photos/2016/1642?image=40");
+  /* --bg-image: url("https://picsum.photos/2016/1642?image=40"); */
 }
 .img-5 {
   --start-color: #5d4012;
   --stop-color: #5d912a;
-  --bg-image: url("https://picsum.photos/2016/1642?image=50");
+  /* --bg-image: url("https://picsum.photos/2016/1642?image=50"); */
 }
