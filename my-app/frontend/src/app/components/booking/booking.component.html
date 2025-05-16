@@ -1,0 +1,251 @@
+<div class="booking-page">
+    <div class="container">
+      <div class="booking-header">
+        <h1 class="text-center">Book Your Appointment</h1>
+        <p class="text-center">Complete the form below to book your nail service</p>
+      </div>
+      
+      <div class="booking-steps">
+        <div class="step" [class.active]="currentStep === 1" [class.completed]="currentStep > 1">
+          <div class="step-number">1</div>
+          <div class="step-label">Select Service</div>
+        </div>
+        <div class="step" [class.active]="currentStep === 2" [class.completed]="currentStep > 2">
+          <div class="step-number">2</div>
+          <div class="step-label">Choose Date & Time</div>
+        </div>
+        <div class="step" [class.active]="currentStep === 3" [class.completed]="currentStep > 3">
+          <div class="step-number">3</div>
+          <div class="step-label">Your Details</div>
+        </div>
+        <div class="step" [class.active]="currentStep === 4">
+          <div class="step-number">4</div>
+          <div class="step-label">Confirmation</div>
+        </div>
+      </div>
+      
+      <div class="booking-content card">
+
+        <div class="step-content" *ngIf="currentStep === 1">
+          <h2>Choose Your Service</h2>
+          <div class="services-grid">
+            <div 
+              *ngFor="let service of services" 
+              class="service-card" 
+              [class.selected]="selectedService?.id === service.id"
+              (click)="selectService(service)">
+              <div class="service-img">
+                <img [src]="service.image" [alt]="service.name">
+              </div>
+              <div class="service-info">
+                <h3>{{ service.name }}</h3>
+                <p>{{ service.description }}</p>
+                <div class="service-meta">
+                  <span class="price">${service.price}</span>
+                  <span class="duration">{{ service.duration }} min</span>
+                </div>
+              </div>
+              <div class="selection-indicator" *ngIf="selectedService?.id === service.id">
+                <span>✓</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-buttons">
+            <button 
+              class="btn btn-primary" 
+              [disabled]="!selectedService" 
+              (click)="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+        
+        <!-- Step 2: Date and Time Selection -->
+        <div class="step-content" *ngIf="currentStep === 2">
+          <h2>Select Date & Time</h2>
+          <div class="date-time-container">
+            <!-- Date selection -->
+            <div class="date-selection">
+              <h3>Choose a Date</h3>
+              <div class="dates-grid">
+                <div 
+                  *ngFor="let date of availableDates" 
+                  class="date-card" 
+                  [class.selected]="isDateSelected(date)"
+                  (click)="selectDate(date)">
+                  <div class="date-weekday">{{ formatDatePart(date, 'EEE') }}</div>
+                  <div class="date-day">{{ formatDatePart(date, 'd') }}</div>
+                  <div class="date-month">{{ formatDatePart(date, 'MMM') }}</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Time selection -->
+            <div class="time-selection" *ngIf="selectedDate">
+              <h3>Choose a Time</h3>
+              <div class="time-slots">
+                <div 
+                  *ngFor="let slot of timeSlots" 
+                  class="time-slot" 
+                  [class.selected]="selectedTimeSlot === slot.time"
+                  [class.unavailable]="!slot.available"
+                  (click)="selectTimeSlot(slot)">
+                  {{ slot.time }}
+                </div>
+              </div>
+            </div>
+            
+            <!-- Staff selection -->
+            <div class="staff-selection" *ngIf="selectedDate && selectedTimeSlot">
+              <h3>Choose a Stylist (Optional)</h3>
+              <div class="staff-grid">
+                <div 
+                  *ngFor="let staff of staffMembers" 
+                  class="staff-card" 
+                  [class.selected]="selectedStaff?.id === staff.id"
+                  (click)="selectStaff(staff)">
+                  <div class="staff-img">
+                    <img [src]="staff.image" [alt]="staff.name">
+                  </div>
+                  <div class="staff-info">
+                    <h4>{{ staff.name }}</h4>
+                    <p>{{ staff.role }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-buttons">
+            <button class="btn btn-secondary" (click)="previousStep()">Back</button>
+            <button 
+              class="btn btn-primary" 
+              [disabled]="!selectedDate || !selectedTimeSlot" 
+              (click)="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+        
+        <!-- Step 3: Customer Details -->
+        <div class="step-content" *ngIf="currentStep === 3">
+          <h2>Your Information</h2>
+          <form [formGroup]="bookingForm" (ngSubmit)="submitForm()">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName" class="form-label">First Name</label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  formControlName="firstName" 
+                  class="form-control"
+                  [class.is-invalid]="isFieldInvalid('firstName')">
+                <div class="invalid-feedback" *ngIf="isFieldInvalid('firstName')">
+                  First name is required
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  formControlName="lastName" 
+                  class="form-control"
+                  [class.is-invalid]="isFieldInvalid('lastName')">
+                <div class="invalid-feedback" *ngIf="isFieldInvalid('lastName')">
+                  Last name is required
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  formControlName="email" 
+                  class="form-control"
+                  [class.is-invalid]="isFieldInvalid('email')">
+                <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
+                  Please enter a valid email address
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  formControlName="phone" 
+                  class="form-control"
+                  [class.is-invalid]="isFieldInvalid('phone')">
+                <div class="invalid-feedback" *ngIf="isFieldInvalid('phone')">
+                  Please enter a valid phone number
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="notes" class="form-label">Special Requests (Optional)</label>
+              <textarea 
+                id="notes" 
+                formControlName="notes" 
+                class="form-control"
+                rows="3"></textarea>
+            </div>
+            
+            <div class="step-buttons">
+              <button type="button" class="btn btn-secondary" (click)="previousStep()">Back</button>
+              <button type="submit" class="btn btn-primary" [disabled]="bookingForm.invalid">Complete Booking</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Step 4: Confirmation -->
+        <div class="step-content confirmation-step" *ngIf="currentStep === 4">
+          <div class="confirmation-icon">✓</div>
+          <h2>Booking Confirmed!</h2>
+          <p>Your appointment has been successfully booked. A confirmation email has been sent to your email address.</p>
+          
+          <div class="booking-details">
+            <h3>Appointment Details</h3>
+            <div class="details-grid">
+              <div class="detail-item">
+                <div class="detail-label">Service:</div>
+                <div class="detail-value">{{ selectedService?.name }}</div>
+              </div>
+              
+              <div class="detail-item">
+                <div class="detail-label">Date:</div>
+                <div class="detail-value">{{ formatDateFull(selectedDate) }}</div>
+              </div>
+              
+              <div class="detail-item">
+                <div class="detail-label">Time:</div>
+                <div class="detail-value">{{ selectedTimeSlot }}</div>
+              </div>
+              
+              <div class="detail-item" *ngIf="selectedStaff">
+                <div class="detail-label">Stylist:</div>
+                <div class="detail-value">{{ selectedStaff.name }}</div>
+              </div>
+              
+              <div class="detail-item">
+                <div class="detail-label">Price:</div>
+                <div class="detail-value">${{ selectedService?.price }}</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="confirmation-footer">
+            <button class="btn btn-secondary" routerLink="/">Return to Home</button>
+            <button class="btn btn-primary" (click)="bookAnother()">Book Another Appointment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

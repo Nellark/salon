@@ -1,193 +1,31 @@
 
+<h1 class="text-center mt-4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-900">CHOOSE <mark class="px-2 text-white bg-pink-600 rounded-sm dark:bg-pink-500">YOUR</mark> FAVourite STYLE</h1>
+<p class="text-lg text-center font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
 
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+    <div *ngFor="let item of services" class="bg-white shadow rounded-lg p-4 flex flex-col justify-between h-full">
+  
+      <div>
+        <img [src]="item.image" [alt]="item.name" class="w-full h-30 object-cover rounded-lg mb-4">
+        <h3 class="text-lg font-bold">{{ item.name }}</h3>
+        <p class="text-gray-600 text-sm mb-2">{{ item.description }}</p>
+      </div>
 
-
-<h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Better Data</span> Scalable AI.</h1>
-<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-
-
-
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3317.JPG" alt="">
+      <div class="flex justify-between items-center mt-2">
+        <span class="text-emerald-600 font-semibold text-base">R{{ item.price }}</span>
+        <button (click)="addToWishlist(item)" class="text-pink-600 text-xl font-bold leading-none">
+            ♥
+          </button>
+          
+      </div>
+  
+ 
+      <a routerLink="/booking" class="mt-3">
+        <button class="w-full bg-pink-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded">
+          Book Now
+        </button>
+      </a>
+  
+    </div>
   </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3318.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3321.jpg" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3322.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3325.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3326.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3327.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3328.jpg" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3330.jpg" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3331.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3332.JPG" alt="">
-  </div>
-  <div>
-      <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3333.JPG" alt="">
-  </div>  <div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3334.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3335.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3336.JPG" alt="">
-</div>
-
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3337.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3338.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3339.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3341.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3343.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3344.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3345.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3346.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3347.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3348.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3350.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3352.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3353.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3357.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3358.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3361.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3363.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3366.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3367.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3368.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3369.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3370.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3371.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3372.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3373.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3374.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3375.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3376.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3377.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3378.JPG" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3379.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3388.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3389.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3388.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3391.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3392.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3393.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3394.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3391.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3395.jpg" alt="">
-</div>
-<div>
-    <img class="h-auto max-w-full rounded-lg" src="nails/IMG_3396.jpg" alt="">
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
+  
