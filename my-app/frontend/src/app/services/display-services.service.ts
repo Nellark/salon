@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ServiceItem } from './product-items';
+import { ServiceItem } from '../product-items';
 
 
 @Injectable({

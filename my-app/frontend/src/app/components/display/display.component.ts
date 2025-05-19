@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DisplayServicesService } from '../../display-services.service';
+import { DisplayServicesService } from '../../services/display-services.service';
 import { ServiceItem } from '../../product-items';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 
 @Component({
   selector: 'app-display',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NavBarComponent],
   templateUrl: './display.component.html',
   styleUrl: './display.component.css'
 })

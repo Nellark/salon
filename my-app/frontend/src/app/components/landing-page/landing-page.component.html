@@ -1,9 +1,9 @@
 
 <app-nav-bar></app-nav-bar>
-
-<section id="home" class="fixed-background img-1 img-2">
+<section id="home" class="fixed-background img-1 img-2 ">
   <div class="content">
-    <h2 class="title">Nail Palo</h2>
+    <h2 class="title">Nail Glam</h2>
+
     <div class="image-text-wrapper">
       <img
         class="img"
@@ -11,29 +11,15 @@
         alt="Nail Art Example"
       />
       <p class="description">
-        Welcome to Nail Palo – where elegance meets artistry. Indulge in the luxury of bespoke nail designs tailored to your unique style. Let your hands make the statement they deserve.
+        Welcome to Nail Glam – where elegance meets artistry.
       </p>
     </div>
   </div>
+
+  <a [routerLink]="['/booking']" class="button">
+    Book Now
+  </a>
 </section>
-
-<div class="mt-8">
-
-<div class="flex items-center justify-center my-12 bg-[#FBEAEA]">
-  <div class="relative w-64 h-[520px] rounded-[2rem] border-[10px] border-[#A2678A] shadow-2xl bg-white overflow-hidden">
-    <div class="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-2.5 bg-gray-300 rounded-full z-10"></div>
-    <div class="w-full h-full">
-      <img
-        src="https://img.daisyui.com/images/stock/453966.webp"
-        alt="wallpaper"
-        class="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
-</div>
-
-
 
 
 <section id="services" class="services">
@@ -48,8 +34,6 @@
     </ul>
   </div>
 </section>
-
-
   <app-home></app-home>
   <app-footer></app-footer>
 
