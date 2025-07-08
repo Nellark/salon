@@ -1,28 +1,59 @@
-<!-- Top Bar -->
 <nav class="sticky top-0 z-50 bg-white border-b border-pink-100 shadow-md">
-    <div class="flex justify-between items-center max-w-screen-xl mx-auto p-4">
-      
-      <!-- Logo -->
-      <a href="#" class="flex items-center space-x-2">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Logo" />
-        <span class="text-2xl font-bold text-pink-600">Nkele's Nail Salon</span>
-      </a>
-  
-      <!-- Contact & Login -->
+  <div class="flex justify-between items-center max-w-screen-xl mx-auto p-4">
 
+    <!-- Logo SVG + Text -->
+    <a href="#" class="flex items-center space-x-3">
+      <!-- Nail Polish Bottle + Brush SVG -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="48"
+        viewBox="0 0 64 76"
+        fill="none"
+        stroke="none"
+      >
+        <!-- Bottle -->
+        <rect x="12" y="28" width="40" height="40" rx="8" ry="8" fill="#ec4899" />
+        <!-- Bottle highlight -->
+        <path
+          d="M20 30 L20 60"
+          stroke="#f9a8d4"
+          stroke-width="4"
+          stroke-linecap="round"
+          opacity="0.6"
+        />
+        <!-- Cap -->
+        <rect x="24" y="0" width="16" height="28" rx="4" ry="4" fill="#9d174d" />
+        <!-- Brush handle -->
+        <rect x="30" y="5" width="4" height="20" fill="#db2777" />
+        <!-- Brush tip dripping polish -->
+        <path
+          d="M34 25 L44 10 L42 30 Z"
+          fill="#b91c1c"
+          stroke="#7f1d1d"
+          stroke-width="1"
+        />
+        <!-- Drop -->
+        <circle cx="40" cy="34" r="4" fill="#b91c1c" />
+      </svg>
+
+      <span class="text-2xl font-bold text-pink-600 select-none" style="font-family: 'Exo', sans-serif;">
+        Nkele's Nail Salon
+      </span>
+    </a>
+
+  </div>
+
+  <!-- Main Nav -->
+  <div class="bg-pink-50">
+    <div class="max-w-screen-xl mx-auto px-4 py-2">
+      <ul class="flex space-x-8 font-medium text-pink-700 text-sm">
+        <li><a href="#home" class="hover:text-pink-900 transition">Home</a></li>
+        <li><a href="#services" class="hover:text-pink-900 transition">Services</a></li>
+        <li><a href="#gallery" class="hover:text-pink-900 transition">Gallery</a></li>
+        <li><a href="#about" class="hover:text-pink-900 transition">About</a></li>
+        <li><a href="#contact" class="hover:text-pink-900 transition">Contact</a></li>
+      </ul>
     </div>
-  
-    <!-- Main Nav -->
-    <div class="bg-pink-50">
-      <div class="max-w-screen-xl mx-auto px-4 py-2">
-        <ul class="flex space-x-8 font-medium text-pink-700 text-sm">
-          <li><a href="home" class="hover:text-pink-900 transition">Home</a></li>
-          <li><a href="services" class="hover:text-pink-900 transition">Services</a></li>
-          <li><a href="gallery" class="hover:text-pink-900 transition">Gallery</a></li>
-          <li><a href="about" class="hover:text-pink-900 transition">About</a></li>
-          <li><a href="contact" class="hover:text-pink-900 transition">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+  </div>
+</nav>
