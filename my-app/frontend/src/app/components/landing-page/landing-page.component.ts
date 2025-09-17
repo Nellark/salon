@@ -9,11 +9,10 @@ import { AboutComponent } from '../about/about.component';
 
 
 @Component({
-  selector: 'app-landing-page',
-  standalone: true,
-  imports: [NavBarComponent, FooterComponent, OurServicesComponent, GalleryComponent, AboutComponent],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+    selector: 'app-landing-page',
+    imports: [NavBarComponent, FooterComponent, OurServicesComponent, GalleryComponent, AboutComponent],
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
 

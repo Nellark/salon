@@ -6,11 +6,10 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 
 @Component({
-  selector: 'app-display',
-  standalone: true,
-  imports: [CommonModule, NavBarComponent],
-  templateUrl: './display.component.html',
-  styleUrl: './display.component.css'
+    selector: 'app-display',
+    imports: [CommonModule, NavBarComponent],
+    templateUrl: './display.component.html',
+    styleUrl: './display.component.css'
 })
 export class DisplayComponent implements OnInit {
 addToWishlist(_t4: ServiceItem) {

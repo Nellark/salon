@@ -9,11 +9,10 @@ interface GalleryItem {
 }
 
 @Component({
-  selector: 'app-gallery',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './gallery.component.html',
-  styleUrl: './gallery.component.css'
+    selector: 'app-gallery',
+    imports: [CommonModule],
+    templateUrl: './gallery.component.html',
+    styleUrl: './gallery.component.css'
 })
 export class GalleryComponent implements OnInit {
   activeFilter = 'all';
