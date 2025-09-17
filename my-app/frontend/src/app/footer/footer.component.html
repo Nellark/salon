@@ -1,54 +1,126 @@
-<footer class="footer text-black mt-4">
-  <div class="max-w-screen-xl mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row justify-between gap-8">
-      
-      <!-- Logo & Contact -->
-      <div>
-        <a href="#" class="flex items-center space-x-3 mb-4">
-          <!-- SVG Logo -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 64 76" fill="none">
-            <rect x="12" y="28" width="40" height="40" rx="8" ry="8" fill="#ec4899" />
+<footer id="contact" class="footer">
+  <div class="container footer-container">
+    <div class="footer-content">
+      <!-- Logo & Description -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 76" fill="none">
+            <rect x="12" y="28" width="40" height="40" rx="8" ry="8" fill="url(#footerBottleGradient)" />
             <path d="M20 30 L20 60" stroke="#f9a8d4" stroke-width="4" stroke-linecap="round" opacity="0.6" />
             <rect x="24" y="0" width="16" height="28" rx="4" ry="4" fill="#9d174d" />
             <rect x="30" y="5" width="4" height="20" fill="#db2777" />
             <path d="M34 25 L44 10 L42 30 Z" fill="#b91c1c" stroke="#7f1d1d" stroke-width="1" />
             <circle cx="40" cy="34" r="4" fill="#b91c1c" />
+            <defs>
+              <linearGradient id="footerBottleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+              </linearGradient>
+            </defs>
           </svg>
-          <span class="text-2xl font-bold text-black" style="font-family: 'Exo', sans-serif;">Nkele's Nail Salon</span>
-        </a>
-
-        <div class="text-sm space-y-1">
-          <p>📞 <a href="tel:0788800970" class="hover:underline font-semibold">078 880 0970</a></p>
-          <p>📧 <a href="mailto:nkele.mnisi90@gmail.com" class="hover:underline font-semibold">nkele.mnisi90&#64;gmail.com</a></p>
+          Nkele's Nail Salon
         </div>
+        <p class="footer-description">
+          Your premier destination for professional nail care and artistic nail designs. 
+          We combine expertise with creativity to deliver exceptional results that make you feel beautiful and confident.
+        </p>
+        <!-- <div class="social-links">
+          <a href="https://wa.me/27788800970" target="_blank" class="social-link" title="WhatsApp">
+     
+          </a>
+          <a href="#" class="social-link" title="Instagram">
+       
+          </a>
+          <a href="#" class="social-link" title="Facebook">
+      
+          </a>
+          <a href="tel:+27788800970" class="social-link" title="Call Us">
+       
+          </a>
+        </div> -->
       </div>
 
-      <!-- Navigation Links -->
-      <div class="grid grid-cols-2 gap-6 text-sm">
-        <div>
-          <h3 class="font-semibold uppercase mb-2">Explore</h3>
-          <ul class="space-y-1">
-            <li><a href="#home" class="hover:underline">Home</a></li>
-            <li><a href="#services" class="hover:underline">Services</a></li>
-            <li><a href="#gallery" class="hover:underline">Gallery</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-semibold uppercase mb-2">Follow</h3>
-          <ul class="space-y-1">
-            <li><a href="#" class="hover:underline">Instagram</a></li>
-            <li><a href="#" class="hover:underline">Facebook</a></li>
-            <li><a href="#" class="hover:underline">TikTok</a></li>
-          </ul>
-        </div>
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul class="footer-nav">
+          <li><a href="#services">Manicures</a></li>
+          <li><a href="#services">Gel Polish</a></li>
+          <li><a href="#services">Nail Art</a></li>
+          <li><a href="#services">Pedicures</a></li>
+          <li><a href="#services">Extensions</a></li>
+          <li><a href="#services">Nail Repair</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul class="contact-info">
+          <li class="contact-item">
+            <div class="contact-icon">
+              <!-- Phone SVG -->
+            </div>
+            <a href="tel:+27788800970" class="contact-link">078 880 0970</a>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon">
+              <!-- WhatsApp SVG -->
+            </div>
+            <a href="https://wa.me/27788800970" target="_blank" class="contact-link">WhatsApp</a>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon">
+              <!-- Clock SVG -->
+            </div>
+            <span>Mon-Sat: 9AM-6PM</span>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon">
+              <!-- Location SVG -->
+            </div>
+            <span>South Africa</span>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <hr class="my-6 border-black/20" />
-
-    <!-- Bottom -->
-    <div class="text-center text-sm">
-      © 2025 Nkele's Nail Salon. All rights reserved.
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © {{ currentYear }} Nkele's Nail Salon. All rights reserved.
+        </p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+
+  <!-- Back to top button -->
+  <button 
+    class="back-to-top" 
+    [class.visible]="showBackToTop"
+    (click)="scrollToTop()"
+    title="Back to top"
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18,15 12,9 6,15"/>
+    </svg>
+  </button>
 </footer>

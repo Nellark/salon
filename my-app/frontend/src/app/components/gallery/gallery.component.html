@@ -1,56 +1,136 @@
-<section id="gallery" class="min-h-screen py-16 px-8 md:px-16 mt-10">
-	<div class="max-w-6xl mx-auto text-center mb-10">
-	  <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
-		View <mark class="px-2 text-white bg-pink-600 rounded-sm">OUR</mark> Collection of STYLE
-	  </h1>
-	  <p class="text-lg font-normal text-gray-500 lg:text-xl mb-12">
-		I craft confidence, creativity, and comfort with every set. Whether you're into bold gel designs, elegant acrylics, or clean natural manicures.</p>
+<section id="gallery" class="gallery-section">
+	<div class="container gallery-container">
+	  <div class="section-header">
+		<h2 class="section-title">Our Beautiful Work</h2>
+		<p class="section-subtitle">
+		  Discover the artistry and precision in every nail service we provide. 
+		  Each design tells a story of creativity, skill, and attention to detail.
+		</p>
+	  </div>
   
-	  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+	  <div class="gallery-filter">
+		<button 
+		  class="filter-btn"
+		  [class.active]="activeFilter === 'all'"
+		  (click)="setFilter('all')"
+		>
+		  All Work
+		</button>
+		<button 
+		  class="filter-btn"
+		  [class.active]="activeFilter === 'manicure'"
+		  (click)="setFilter('manicure')"
+		>
+		  Manicures
+		</button>
+		<button 
+		  class="filter-btn"
+		  [class.active]="activeFilter === 'nail-art'"
+		  (click)="setFilter('nail-art')"
+		>
+		  Nail Art
+		</button>
+		<button 
+		  class="filter-btn"
+		  [class.active]="activeFilter === 'extensions'"
+		  (click)="setFilter('extensions')"
+		>
+		  Extensions
+		</button>
+		<button 
+		  class="filter-btn"
+		  [class.active]="activeFilter === 'pedicure'"
+		  (click)="setFilter('pedicure')"
+		>
+		  Pedicures
+		</button>
+	  </div>
   
-		<!-- Style Card 1 -->
-		<div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-black">
-		  <img
-			src="https://plushbeautybar.co.za/wp-content/uploads/2024/02/PHOTO-2024-02-11-06-24-55.jpg"
-			alt="Stiletto"
-			class="w-full h-80 object-cover transform md:group-hover:scale-105 transition-transform duration-500"
+	  <div class="gallery-grid">
+		<div 
+		  *ngFor="let item of filteredGalleryItems; let i = index" 
+		  class="gallery-item"
+		  (click)="openLightbox(i)"
+		>
+		  <img 
+			[src]="item.image" 
+			[alt]="item.title"
+			class="gallery-image"
+			loading="lazy"
 		  />
-		  <div class="absolute inset-0 bg-black bg-opacity-30 md:group-hover:bg-opacity-70 transition duration-300 flex items-center justify-center">
-			<span class="text-white text-2xl font-semibold opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-			  Stiletto
-			</span>
+		  <div class="gallery-overlay">
+			<div class="gallery-overlay-content">
+			  <h3 class="gallery-title">{{ item.title }}</h3>
+			  <p class="gallery-category">{{ item.category }}</p>
+			  <div class="view-icon">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+				  <circle cx="12" cy="12" r="3"/>
+				</svg>
+			  </div>
+			</div>
 		  </div>
 		</div>
+	  </div>
   
-		<!-- Style Card 2 -->
-		<div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-black">
-		  <img
-			src="https://i.pinimg.com/736x/ff/de/bb/ffdebb4d36acd5b6ca4bf269290dfef1.jpg"
-			alt="Oval"
-			class="w-full h-80 object-cover transform md:group-hover:scale-105 transition-transform duration-500"
-		  />
-		  <div class="absolute inset-0 bg-black bg-opacity-30 md:group-hover:bg-opacity-70 transition duration-300 flex items-center justify-center">
-			<span class="text-white text-2xl font-semibold opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-			  Oval
-			</span>
+	  <div class="testimonials-section">
+		<h3 class="testimonials-title">What Our Clients Say</h3>
+		<div class="testimonials-grid">
+		  <div class="testimonial-card">
+			<p class="testimonial-text">
+			  "Absolutely amazing service! My nails have never looked better. 
+			  The attention to detail and artistic flair is outstanding."
+			</p>
+			<p class="testimonial-author">Sarah Johnson</p>
+			<p class="testimonial-role">Regular Client</p>
+		  </div>
+		  <div class="testimonial-card">
+			<p class="testimonial-text">
+			  "Professional, clean, and incredibly talented. I always leave 
+			  feeling pampered and confident. Highly recommend!"
+			</p>
+			<p class="testimonial-author">Maria Rodriguez</p>
+			<p class="testimonial-role">Nail Art Enthusiast</p>
+		  </div>
+		  <div class="testimonial-card">
+			<p class="testimonial-text">
+			  "The best nail salon experience I've ever had. Quality work, 
+			  reasonable prices, and such a welcoming atmosphere."
+			</p>
+			<p class="testimonial-author">Jennifer Lee</p>
+			<p class="testimonial-role">Beauty Blogger</p>
 		  </div>
 		</div>
-  
-		<!-- Style Card 3 -->
-		<div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-black">
-		  <img
-			src="https://i.ebayimg.com/images/g/ZNEAAOSwV41k0LPX/s-l1200.jpg"
-			alt="Coffin"
-			class="w-full h-80 object-cover transform md:group-hover:scale-105 transition-transform duration-500"
-		  />
-		  <a [routerLink]="['/display']" class="absolute inset-0 bg-black bg-opacity-30 md:group-hover:bg-opacity-70 transition duration-300 flex items-center justify-center">
-			<span class="text-white text-2xl font-semibold opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-			  Coffin
-			</span>
-		  </a>
-		</div>
-  
 	  </div>
 	</div>
   </section>
   
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" [class.active]="lightboxOpen" (click)="closeLightbox()">
+	<div class="lightbox-content" (click)="$event.stopPropagation()">
+	  <button class="lightbox-close" (click)="closeLightbox()">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+		  <line x1="18" y1="6" x2="6" y2="18"/>
+		  <line x1="6" y1="6" x2="18" y2="18"/>
+		</svg>
+	  </button>
+	  
+	  <button class="lightbox-nav lightbox-prev" (click)="previousImage()">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+		  <polyline points="15,18 9,12 15,6"/>
+		</svg>
+	  </button>
+	  
+	  <img 
+		[src]="currentImage?.image" 
+		[alt]="currentImage?.title"
+		class="lightbox-image"
+	  />
+	  
+	  <button class="lightbox-nav lightbox-next" (click)="nextImage()">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+		  <polyline points="9,18 15,12 9,6"/>
+		</svg>
+	  </button>
+	</div>
+  </div>

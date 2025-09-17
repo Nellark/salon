@@ -1,19 +1,14 @@
-<nav class="sticky top-0 z-50 border-b border-pink-100 shadow-md nav-bg">
-  <div class="flex justify-between items-center max-w-screen-xl mx-auto p-4 ">
-
-    <!-- Logo SVG + Text -->
-    <a href="#" class="flex items-center space-x-3">
-      <!-- Nail Polish Bottle + Brush SVG -->
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <a href="#home" class="logo">
       <svg
+        class="logo-icon"
         xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="48"
         viewBox="0 0 64 76"
         fill="none"
-        stroke="none"
       >
         <!-- Bottle -->
-        <rect x="12" y="28" width="40" height="40" rx="8" ry="8" fill="#ec4899" />
+        <rect x="12" y="28" width="40" height="40" rx="8" ry="8" fill="url(#bottleGradient)" />
         <!-- Bottle highlight -->
         <path
           d="M20 30 L20 60"
@@ -26,7 +21,7 @@
         <rect x="24" y="0" width="16" height="28" rx="4" ry="4" fill="#9d174d" />
         <!-- Brush handle -->
         <rect x="30" y="5" width="4" height="20" fill="#db2777" />
-        <!-- Brush tip dripping polish -->
+        <!-- Brush tip -->
         <path
           d="M34 25 L44 10 L42 30 Z"
           fill="#b91c1c"
@@ -35,25 +30,44 @@
         />
         <!-- Drop -->
         <circle cx="40" cy="34" r="4" fill="#b91c1c" />
+        
+        <!-- Gradients -->
+        <defs>
+          <linearGradient id="bottleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+          </linearGradient>
+        </defs>
       </svg>
-
-      <span class="text-2xl font-bold text-pink-600 select-none" style="font-family: 'Exo', sans-serif;">
-        Nkele's Nail Salon
-      </span>
+      Nkele's Nail Salon
     </a>
 
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <button 
+      class="mobile-menu-button" 
+      [class.active]="isMobileMenuOpen"
+      (click)="toggleMobileMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 
-  <!-- Main Nav -->
-  <div class="bg-pink-100">
-    <div class="max-w-screen-xl mx-auto px-4 py-2">
-      <ul class="flex space-x-8 font-medium text-pink-700 text-sm">
-        <li><a href="#home" class="hover:text-pink-900 transition">Home</a></li>
-        <li><a href="#services" class="hover:text-pink-900 transition">Services</a></li>
-        <li><a href="#gallery" class="hover:text-pink-900 transition">Gallery</a></li>
-        <li><a href="#about" class="hover:text-pink-900 transition">About</a></li>
-        <li><a href="#contact" class="hover:text-pink-900 transition">Contact</a></li>
-      </ul>
-    </div>
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <ul>
+      <li><a href="#home" class="nav-link" (click)="closeMobileMenu()">Home</a></li>
+      <li><a href="#services" class="nav-link" (click)="closeMobileMenu()">Services</a></li>
+      <li><a href="#gallery" class="nav-link" (click)="closeMobileMenu()">Gallery</a></li>
+      <li><a href="#about" class="nav-link" (click)="closeMobileMenu()">About</a></li>
+      <li><a href="#contact" class="nav-link" (click)="closeMobileMenu()">Contact</a></li>
+    </ul>
   </div>
 </nav>
