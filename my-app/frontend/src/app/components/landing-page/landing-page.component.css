@@ -110,7 +110,7 @@
   transition: all var(--transition-normal);
 }
 .cta-button {
-  background: linear-gradient(135deg,var(--primary-500),var(--primary-600));
+  background:  #c2185b;
   color: #fff;
   box-shadow: 0 10px 25px rgba(236,72,153,.4);
 }

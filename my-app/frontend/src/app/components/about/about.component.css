@@ -11,6 +11,7 @@
   pointer-events:none;
 }
 
+
 .about-container {position:relative;z-index:1;}
 .about-content {
   display:grid;
@@ -225,6 +226,38 @@
   transform:translateY(-2px);
   color:var(--neutral-800);
 }
+
+.custom-cta-btn {
+  /* lighter gradient */
+  background-color:  #e91e63;
+  border: none;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px; /* fully rounded pill shape */
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.custom-cta-btn svg {
+  fill: #fff !important;
+}
+
+.custom-cta-btn:hover,
+.custom-cta-btn:focus {
+  background: linear-gradient(135deg, #d81b60, #ad1457);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,.3);
+}
+
+
+
+
 
 /* Responsive */
 @media (max-width:768px){

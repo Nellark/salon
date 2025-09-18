@@ -1,136 +1,197 @@
+
+<app-nav-bar></app-nav-bar>
+
 <section id="gallery" class="gallery-section">
-	<div class="container gallery-container">
-	  <div class="section-header">
-		<h2 class="section-title">Our Beautiful Work</h2>
-		<p class="section-subtitle">
-		  Discover the artistry and precision in every nail service we provide. 
-		  Each design tells a story of creativity, skill, and attention to detail.
-		</p>
-	  </div>
-  
-	  <div class="gallery-filter">
-		<button 
-		  class="filter-btn"
-		  [class.active]="activeFilter === 'all'"
-		  (click)="setFilter('all')"
-		>
-		  All Work
-		</button>
-		<button 
-		  class="filter-btn"
-		  [class.active]="activeFilter === 'manicure'"
-		  (click)="setFilter('manicure')"
-		>
-		  Manicures
-		</button>
-		<button 
-		  class="filter-btn"
-		  [class.active]="activeFilter === 'nail-art'"
-		  (click)="setFilter('nail-art')"
-		>
-		  Nail Art
-		</button>
-		<button 
-		  class="filter-btn"
-		  [class.active]="activeFilter === 'extensions'"
-		  (click)="setFilter('extensions')"
-		>
-		  Extensions
-		</button>
-		<button 
-		  class="filter-btn"
-		  [class.active]="activeFilter === 'pedicure'"
-		  (click)="setFilter('pedicure')"
-		>
-		  Pedicures
-		</button>
-	  </div>
-  
-	  <div class="gallery-grid">
-		<div 
-		  *ngFor="let item of filteredGalleryItems; let i = index" 
-		  class="gallery-item"
-		  (click)="openLightbox(i)"
-		>
-		  <img 
-			[src]="item.image" 
-			[alt]="item.title"
-			class="gallery-image"
-			loading="lazy"
-		  />
-		  <div class="gallery-overlay">
-			<div class="gallery-overlay-content">
-			  <h3 class="gallery-title">{{ item.title }}</h3>
-			  <p class="gallery-category">{{ item.category }}</p>
-			  <div class="view-icon">
-				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-				  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-				  <circle cx="12" cy="12" r="3"/>
-				</svg>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-  
-	  <div class="testimonials-section">
-		<h3 class="testimonials-title">What Our Clients Say</h3>
-		<div class="testimonials-grid">
-		  <div class="testimonial-card">
-			<p class="testimonial-text">
-			  "Absolutely amazing service! My nails have never looked better. 
-			  The attention to detail and artistic flair is outstanding."
-			</p>
-			<p class="testimonial-author">Sarah Johnson</p>
-			<p class="testimonial-role">Regular Client</p>
-		  </div>
-		  <div class="testimonial-card">
-			<p class="testimonial-text">
-			  "Professional, clean, and incredibly talented. I always leave 
-			  feeling pampered and confident. Highly recommend!"
-			</p>
-			<p class="testimonial-author">Maria Rodriguez</p>
-			<p class="testimonial-role">Nail Art Enthusiast</p>
-		  </div>
-		  <div class="testimonial-card">
-			<p class="testimonial-text">
-			  "The best nail salon experience I've ever had. Quality work, 
-			  reasonable prices, and such a welcoming atmosphere."
-			</p>
-			<p class="testimonial-author">Jennifer Lee</p>
-			<p class="testimonial-role">Beauty Blogger</p>
-		  </div>
-		</div>
-	  </div>
-	</div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Exquisite Nail Collection</h2>
+        <p class="section-subtitle">
+          Discover our expertly crafted nail designs, showcasing timeless elegance and sophistication.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" style="--i: 1;">
+          <img src="nails/IMG_3317.JPG" alt="French Elegance" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">French Elegance</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 2;">
+          <img src="nails/IMG_3318.JPG" alt="Glossy Shine" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Glossy Shine</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 3;">
+          <img src="nails/IMG_3321.jpg" alt="Nude Sophistication" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Nude Sophistication</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 4;">
+          <img src="nails/IMG_3319.JPG" alt="Matte Finish" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Matte Finish</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 5;">
+          <img src="nails/IMG_3323.JPG" alt="Soft Pink Glow" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Soft Pink Glow</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 6;">
+          <img src="nails/IMG_3320.JPG" alt="Chrome Luxe" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Chrome Luxe</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 7;">
+          <img src="nails/IMG_3336.JPG"  alt="Classic Red" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Classic Red</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 8;">
+          <img src="nails/IMG_3325.JPG"  alt="Ombre Bliss" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Ombre Bliss</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 9;">
+          <img src="nails/IMG_3326.JPG"  alt="Natural Glow" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Natural Glow</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 10;">
+          <img src="nails/IMG_3327.JPG" alt="Metallic Sheen" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Metallic Sheen</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 11;">
+          <img src="nails/IMG_3328.jpg"  alt="Bold Crimson" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Bold Crimson</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 12;">
+          <img src="nails/IMG_3329.JPG"  alt="Holographic Shine" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Holographic Shine</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 13;">
+          <img src="nails/IMG_3330.jpg"  alt="Soft Nude" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Soft Nude</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 14;">
+          <img src="nails/IMG_3331.JPG"  alt="Velvet Touch" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Velvet Touch</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 15;">
+          <img src="nails/IMG_3332.JPG" alt="Classic White" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Classic White</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 16;">
+          <img src="nails/IMG_3333.JPG" alt="Shimmering Gel" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Shimmering Gel</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 17;">
+          <img src="nails/IMG_3334.JPG" alt="Elegant Beige" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Elegant Beige</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 18;">
+          <img src="nails/IMG_3338.JPG" alt="Pearl Finish" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Pearl Finish</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 19;">
+          <img src="nails/IMG_3337.JPG" alt="Deep Burgundy" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Deep Burgundy</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 20;">
+          <img src="nails/IMG_3339.JPG" alt="Neon Glow" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Neon Glow</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 21;">
+          <img src="nails/IMG_3340.JPG"alt="Soft Coral" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Soft Coral</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 22;">
+          <img src="nails/IMG_3341.JPG" alt="Glitter Shine" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Glitter Shine</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 23;">
+          <img src="nails/IMG_3342.JPG"alt="Classic Mauve" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Classic Mauve</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 24;">
+          <img src="nails/IMG_3343.JPG" alt="Iridescent Glow" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Iridescent Glow</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 25;">
+          <img src="nails/IMG_3344.JPG" alt="Timeless Pink" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Timeless Pink</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 26;">
+          <img src="nails/IMG_3345.JPG"alt="Frosted Finish" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Frosted Finish</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 28;">
+          <img src="nails/IMG_3347.JPG" alt="Satin Sheen" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Satin Sheen</h3>
+          </div>
+        </div>
+        <div class="gallery-item" style="--i: 29;">
+          <img src="nails/IMG_3349.JPG"alt="Sheer Nude" class="gallery-image">
+          <div class="gallery-caption">
+            <h3 class="gallery-caption-title">Sheer Nude</h3>
+          </div>
+        </div>
+       
+      </div>
+
+      <a href="https://wa.me/27788800970?text=Hi! I'd like to book a nail appointment" target="_blank" class="cta-button">
+        Book Your Appointment
+      </a>
+    </div>
+
+    <div class="modal" id="imageModal">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <img src="" alt="Nail Image" class="modal-image" id="modalImage">
+    </div>
   </section>
-  
-  <!-- Lightbox Modal -->
-  <div class="lightbox-overlay" [class.active]="lightboxOpen" (click)="closeLightbox()">
-	<div class="lightbox-content" (click)="$event.stopPropagation()">
-	  <button class="lightbox-close" (click)="closeLightbox()">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-		  <line x1="18" y1="6" x2="6" y2="18"/>
-		  <line x1="6" y1="6" x2="18" y2="18"/>
-		</svg>
-	  </button>
-	  
-	  <button class="lightbox-nav lightbox-prev" (click)="previousImage()">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-		  <polyline points="15,18 9,12 15,6"/>
-		</svg>
-	  </button>
-	  
-	  <img 
-		[src]="currentImage?.image" 
-		[alt]="currentImage?.title"
-		class="lightbox-image"
-	  />
-	  
-	  <button class="lightbox-nav lightbox-next" (click)="nextImage()">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-		  <polyline points="9,18 15,12 9,6"/>
-		</svg>
-	  </button>
-	</div>
-  </div>
+
+
+  <app-footer></app-footer>

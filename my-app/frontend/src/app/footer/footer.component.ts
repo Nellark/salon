@@ -12,6 +12,11 @@ export class FooterComponent implements OnInit, OnDestroy {
   currentYear = new Date().getFullYear();
   showBackToTop = false;
   newsletterEmail = '';
+  isMobileMenuOpen = false;
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

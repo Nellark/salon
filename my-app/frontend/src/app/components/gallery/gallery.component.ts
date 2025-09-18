@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NavBarComponent } from "../nav-bar/nav-bar.component";
+import { FooterComponent } from "../../footer/footer.component";
 
 interface GalleryItem {
   id: number;
@@ -10,7 +12,7 @@ interface GalleryItem {
 
 @Component({
     selector: 'app-gallery',
-    imports: [CommonModule],
+    imports: [CommonModule, NavBarComponent, FooterComponent],
     templateUrl: './gallery.component.html',
     styleUrl: './gallery.component.css'
 })
